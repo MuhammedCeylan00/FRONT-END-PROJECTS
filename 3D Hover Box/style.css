@@ -1,0 +1,77 @@
+body {
+	background-color:white;
+}
+.rotating-box {
+	width: 400px;
+	height: 400px;
+	margin: 10px auto;/*kenar boşluğu ayarlar*/
+	perspective:1000px;/*kutuya perspektiflik katar*/
+}
+.single-rb {
+	width: 400px;
+	height: 400px;
+	animation: rotate 15s linear infinite;
+	transform-style: preserve-3d;
+	margin-top: 120px;
+}
+.single-rb img {
+	height: 400px;
+	width: 400px;
+}
+.single-rb div {
+	position: absolute; /*Absolute :Kendisini kapsayan bir üst öğeye relative konumlanmışsa öğeye göre konum almaktadır. Böyle bir eleman bulunmazsa, nesne web sayfasına göre konumlanacaktır.*/
+	width: 400px;/*genislik*/
+	height: 400px;/*yükseklik*/
+}
+/*
+translateX: X eksenindeki konumunu değiştirmek için
+
+translateY: Y eksenindeki konumunu değiştirmek için
+
+translateZ: Z eksenindeki konumunu değiştirmek için
+
+translate: X ve Y eksenlerindeki konumunu değiştirmek için kullanılır. Birinci parametre X ekseni için, ikinci parametre Y ekseni için uygulanır.
+
+translate3d: X, Y ve Z eksenlerindeki konumunu değiştirmek için kullanılır. Birinci parametre X ekseni, ikinci parametre Y ve üçüncü parametre Z ekseni için uygulanır.*/
+.front-side {
+    /*transformTesiste elemana 2D veya 3D dönüşümü uygular. Bu özellik, öğeleri döndürmenize, ölçeklendirmenize, taşımanıza, eğmenize vb.*/
+	transform: translateZ(200px);
+}
+/*rotateX: Html etiketini, 3 boyutlu olarak X ekseninde döndürür.
+
+rotateY: Html etiketini, 3 boyutlu olarak Y ekseninde döndürür.
+
+rotateZ: Html etiketini, 3 boyutlu olarak Z ekseninde döndürür.
+
+rotate: Pozitif değer verildiğinde, Html etiketini 2 boyutlu olarak saat yönünde döndürür.
+
+Negatif değer verildiğinde, Html etiketini 2 boyutlu olarak saat yönünün tersine döndürür.*/
+.back-side {
+	transform: rotateY(180deg) translateZ(200px);
+}
+.left-side {
+	transform: rotateY(-90deg) translateX(-200px);
+	transform-origin: left;
+}
+.right-side {
+	transform: rotateY(90deg) translateX(200px);
+	transform-origin: right;
+}
+.top-side {
+	transform: rotateX(-90deg) translateY(-200px);
+	transform-origin: top;
+    /*transform-originÖzelliği dönüştürülmüş elemanların konumunu değiştirmek için izin verir.*/
+}
+.bottom-side {
+	transform: rotateX(90deg) translateY(200px);
+	transform-origin: bottom;
+}
+/*@keyframesKural animasyon kodunu belirtir.*/
+@keyframes rotate {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
