@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(24, 24, 41);
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    ;
+}
+
+#input {
+    width: 20rem;
+    height: 1.7rem;
+    font-size: 1rem;
+    color: black;
+}
+
+.fa {
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-times {
+    color: brown;
+}
